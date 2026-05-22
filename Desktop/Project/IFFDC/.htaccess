@@ -1,0 +1,51 @@
+# ============================================================
+# .htaccess — IFFDC Maharajpur Security Configuration
+# Place in project root
+# ============================================================
+
+Options -Indexes
+ServerSignature Off
+
+# Prevent direct access to config and includes
+<FilesMatch "\.(php)$">
+    # Allow PHP files to run
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Force HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Block access to config folder directly
+    RewriteRule ^config/.*$ - [F,L]
+
+    # Redirect index.html to index.php
+    RewriteCond %{REQUEST_URI} ^/index\.html$
+    RewriteRule ^(.*)index\.html$ index.php [R=301,L]
+</IfModule>
+
+# Protect sensitive files
+<FilesMatch "(^\.htaccess|db\.php|mailer\.php)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Allow config files only from server
+<Files "db.php">
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Limit upload types
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+    # In uploads folder, block PHP execution
+</FilesMatch>

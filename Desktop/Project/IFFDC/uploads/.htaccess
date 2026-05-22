@@ -1,0 +1,8 @@
+# ============================================================
+# uploads/.htaccess — Block PHP execution in uploads folder
+# Prevents malicious file upload attacks
+# ============================================================
+<FilesMatch "\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

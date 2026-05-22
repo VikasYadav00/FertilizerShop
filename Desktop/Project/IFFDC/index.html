@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFFDC Maharajpur | Fertilizer Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                <div>
+                    <h1>IFFDC Maharajpur</h1>
+                    <span>KRISHAK SEVA KENDRA</span>
+                </div>
+            </a>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="login-link">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Login</span>
+                </a>
+
+                <div class="cart-status" id="cart-btn" style="cursor: pointer;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+                
+                <a href="tel:+910000000000" class="call-btn">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h2>Quality Fertilizers for Maharajpur Farmers</h2>
+        <p>Official IFFDC products to help you grow more and earn more.</p>
+    </header>
+
+    <div class="search-container">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="product-search" placeholder="Search for urea, dap, seeds...">
+        </div>
+    </div>
+
+    <div class="filter-container" id="filters">
+        <button class="filter-btn active" data-cat="All">All</button>
+        <button class="filter-btn" data-cat="Fertilizer">Fertilizer</button>
+        <button class="filter-btn" data-cat="Solid Fertilizer">Solid Fertilizer</button>
+        <button class="filter-btn" data-cat="Bio-Fertilizer">Bio-Fertilizer</button>
+        <button class="filter-btn" data-cat="Seeds">Seeds</button>
+    </div>
+
+    <main class="product-grid" id="product-list">
+        </main>
+
+    <footer>
+        <p>&copy; 2026 IFFDC Maharajpur. Designed by Vikas Yadav.</p>
+    </footer>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart" class="close-btn">&times;</button>
+        </div>
+        
+        <div id="cart-items-container" class="cart-items-container"></div>
+
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Total Amount:</span>
+                <span id="cart-total">₹0</span>
+            </div>
+            <button class="checkout-btn" onclick="checkoutWhatsApp()">
+                <i class="fab fa-whatsapp"></i> Order on WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
