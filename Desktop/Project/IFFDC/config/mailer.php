@@ -25,7 +25,7 @@ if (file_exists($phpmailerPath)) {
 define('MAIL_HOST',     'smtp.gmail.com');
 define('MAIL_PORT',     587);
 define('MAIL_USERNAME', 'vy4479365@gmail.com');   // <-- Replace with your Gmail
-define('MAIL_PASSWORD', 'otga bmhv wswl emta'); // <-- Replace with Gmail App Password
+define('MAIL_PASSWORD', 'zrbpnuymoqbhucrr'); // <-- Replace with Gmail App Password
 define('MAIL_FROM',     'vy4479365@gmail.com');   // <-- Same as above
 define('MAIL_FROM_NAME','IFFDC Maharajpur');
 
